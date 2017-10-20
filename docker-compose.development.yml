@@ -1,0 +1,16 @@
+version: '3'
+services:
+  web:
+    ports:
+      - 3000:3000
+    links:
+      - pg
+    # For using pry
+    args:
+      dns: 10.66.0.1
+    stdin_open: true
+    tty: true
+
+  pg:
+    ports:
+      - 5432:5432
