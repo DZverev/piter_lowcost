@@ -14,3 +14,7 @@ services:
   pg:
     ports:
       - 5432:5432
+
+  webpack:
+      ports:
+        - 8080:8080

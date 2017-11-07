@@ -43,4 +43,6 @@ rails_best_practices_output.html
 .env
 /pms_data/*
 .vscode
-.DS_Store
+.DS_Store/public/packs
+/node_modules
+/public/packs/

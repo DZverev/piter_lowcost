@@ -1,5 +1,11 @@
 version: '3'
 services:
+  pg:
+    build:
+      context: .
+      dockerfile: ./docker/pg/Dockerfile
+    env_file: .env
+
   web:
     build:
       context: .
@@ -9,11 +15,15 @@ services:
       - backend-modules:/usr/local/bundle
     env_file: .env
 
-  pg:
+  webpack:
     build:
       context: .
-      dockerfile: ./docker/pg/Dockerfile
+      dockerfile: ./docker/webpack/Dockerfile
+    volumes:
+      - ./:/home/dockeruser/project
+      - backend-modules:/usr/local/bundle
     env_file: .env
+
 
 volumes:
   backend-modules:
