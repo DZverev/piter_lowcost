@@ -47,3 +47,4 @@ rails_best_practices_output.html
 /node_modules
 /public/packs/
 /tmp/
+/config/secrets.yml
