@@ -49,7 +49,5 @@ jobs:
           name: Start tests
           command: |
             docker-compose exec test bundle exec test bundle-audit update && bundle exec bundle-audit check
-#            docker-compose exec test bundle exec rspec
-#            docker-compose exec test bundle exec cucumber
             docker-compose exec test bundle exec rubocop
             docker-compose exec test bundle exec rails_best_practices .
