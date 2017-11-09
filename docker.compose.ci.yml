@@ -1,0 +1,18 @@
+version: '3'
+services:
+  test:
+    ci:
+      context: .
+      dockerfile: ./docker/ci/Dockerfile
+    links:
+      - pg
+    env_file: .env
+    tty: true
+
+  pg:
+    build:
+      context: .
+      dockerfile: ./docker/pg/Dockerfile
+    env_file: .env
+    ports:
+      - "5432:5432"
