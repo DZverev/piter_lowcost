@@ -12,6 +12,9 @@ import Offer from '../Offer';
 // ];
 
 class OffersList extends Component {
+  handleAddButton = () => {
+    this.props.onEntryAdd();
+  }
   render() {
     const offerItems = this.props.data.map((offer,i) => {
       return(
@@ -19,7 +22,7 @@ class OffersList extends Component {
       )
     });
     return(
-      <Card title="Выберите рейс" extra={<a href="#">Еще</a>} noHovering>
+      <Card title="Выберите рейс" extra={<a onClick={this.handleAddButton}>Еще</a>} noHovering>
         {offerItems}
       </Card>
     )
