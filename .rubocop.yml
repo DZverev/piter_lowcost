@@ -32,7 +32,6 @@ Layout/MultilineBlockLayout:
     - spec/**/*
 
 Layout/IndentHash:
-Layout/IndentHash:
   Exclude:
     - spec/**/*
 
