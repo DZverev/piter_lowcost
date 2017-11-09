@@ -48,3 +48,4 @@ rails_best_practices_output.html
 /public/packs/*
 /tmp/
 /config/secrets.yml
+!/.env.ci

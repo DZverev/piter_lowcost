@@ -44,10 +44,10 @@ jobs:
       - run:
           name: Setup db and other stuff
           command: |
-            docker-compose exec test bundle exec rake db:create db:migrate
+            docker-compose exec ci bundle exec rake db:create db:migrate
       - run:
           name: Start tests
           command: |
-            docker-compose exec test bundle exec test bundle-audit update && bundle exec bundle-audit check
-            docker-compose exec test bundle exec rubocop
-            docker-compose exec test bundle exec rails_best_practices .
+            docker-compose exec ci bundle exec test bundle-audit update && bundle exec bundle-audit check
+            docker-compose exec ci bundle exec rubocop
+            docker-compose exec ci bundle exec rails_best_practices .
