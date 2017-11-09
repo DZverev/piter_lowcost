@@ -1,0 +1,10 @@
+test: &test
+  adapter: postgresql
+  encoding: unicode
+  database: piter_lowcost_test
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  template: template0
+  username: postgres
+  password: <%= ENV['POSTGRES_PASSWORD'] || 'pass' %>
+  port: <%= ENV['PG_PORT'] || 5432 %>
+  host: <%= ENV['PG_HOST'] || '127.0.0.1'%>
