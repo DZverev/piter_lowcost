@@ -10,16 +10,8 @@ class SelectCity extends Component {
     super(props);
   }
 
-  handleChange(value) {
-    console.log(`selected ${value}`);
-  }
-
-  handleBlur() {
-    console.log('blur');
-  }
-
-  handleFocus() {
-    console.log('focus');
+  handleChange = (value) => {
+    this.props.onSelectChange(this.props.name, value);
   }
 
   render() {
@@ -35,8 +27,6 @@ class SelectCity extends Component {
         placeholder="Выберите город"
         optionFilterProp="children"
         onChange={this.handleChange}
-        onFocus={this.handleFocus}
-        onBlur={this.handleBlur}
         filterOption={(input, option) => option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0}
       >
         {cityOptions}

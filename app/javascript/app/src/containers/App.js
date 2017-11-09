@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-
 import { LocaleProvider } from 'antd';
 import ruRU from 'antd/lib/locale-provider/ru_RU';
 
