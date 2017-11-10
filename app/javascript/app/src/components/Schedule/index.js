@@ -1,15 +1,14 @@
 import React, { Component } from 'react';
 import { Row, Col } from 'antd';
-
-import { API_PATH } from '../../config/development';
-
 import FlightEntry from '../FlightEntry';
+import DateRange from  '../DateRange'
 
 class Schedule extends Component {
   constructor(props) {
     super(props);
     this.state = {
       flightEntries: [{id: 0}],
+
       lastCity: undefined
     }
   }
@@ -18,13 +17,13 @@ class Schedule extends Component {
     this.setState(prevState => ({
       flightEntries: prevState.flightEntries.concat({id: prevState.flightEntries.length})
     }));
-  }
+  };
 
   handleUpdateLastCity = (value) => {
     this.setState({
       lastCity: value
     })
-  }
+  };
 
   render() {
     const flightEntries = this.state.flightEntries.map((e,i) => {
@@ -37,9 +36,10 @@ class Schedule extends Component {
           />
         </Col>
       )
-    })
+    });
     return(
       <div>
+        <DateRange/>
         <Row>
           {flightEntries}
         </Row>
