@@ -22,6 +22,7 @@ class SelectCity extends Component {
     })
     return(
       <Select
+        defaultValue={this.props.cityFrom}
         showSearch
         style={{ width: 200 }}
         placeholder="Выберите город"

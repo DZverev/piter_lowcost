@@ -12,14 +12,32 @@ import Offer from '../Offer';
 // ];
 
 class OffersList extends Component {
+  handleAddButton = () => {
+    this.props.onEntryAdd();
+  }
+
+  handleClick = (id) => {
+    this.props.onEntrySelect(id);
+  }
+
+  isSelected = (id) => {
+    return this.props.selectedEntryId === id;
+  }
+
   render() {
     const offerItems = this.props.data.map((offer,i) => {
       return(
-        <Offer key={i} date={offer.date} price={offer.price} />
+        <Offer
+          isSelected={this.isSelected(offer.id)}
+          click={() => this.handleClick(offer.id)}
+          key={offer.id}
+          date={offer.date}
+          price={offer.price}
+        />
       )
     });
     return(
-      <Card title="Выберите рейс" extra={<a href="#">Еще</a>} noHovering>
+      <Card title="Выберите рейс" extra={<a onClick={this.handleAddButton}>Еще</a>} noHovering>
         {offerItems}
       </Card>
     )
