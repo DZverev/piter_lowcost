@@ -15,10 +15,25 @@ class OffersList extends Component {
   handleAddButton = () => {
     this.props.onEntryAdd();
   }
+
+  handleClick = (id) => {
+    this.props.onEntrySelect(id);
+  }
+
+  isSelected = (id) => {
+    return this.props.selectedEntryId === id;
+  }
+
   render() {
     const offerItems = this.props.data.map((offer,i) => {
       return(
-        <Offer key={i} date={offer.date} price={offer.price} />
+        <Offer
+          isSelected={this.isSelected(offer.id)}
+          click={() => this.handleClick(offer.id)}
+          key={offer.id}
+          date={offer.date}
+          price={offer.price}
+        />
       )
     });
     return(

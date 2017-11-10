@@ -11,7 +11,8 @@ class FlightEntry extends Component {
     this.state = {
       cityFrom: this.props.cityFrom,
       cityTo: "",
-      offers: []
+      offers: [],
+      selectedEntryId: undefined
     };
   }
 
@@ -23,6 +24,10 @@ class FlightEntry extends Component {
     if (name=="cityTo") {
       setTimeout(() => this.props.updateLastCity(value));
     }
+  }
+
+  handleFlightSelection = (id) => {
+    this.setState({selectedEntryId: id});
   }
 
   getOffers = () => {
@@ -46,7 +51,12 @@ class FlightEntry extends Component {
         </Row>
         <Row>
           <Col span={24}>
-            <OffersList onEntryAdd={this.props.onEntryAdd} data={this.state.offers} />
+            <OffersList
+              onEntrySelect={this.handleFlightSelection}
+              selectedEntryId={this.state.selectedEntryId}
+              onEntryAdd={this.props.onEntryAdd}
+              data={this.state.offers}
+            />
           </Col>
         </Row>
       </div>

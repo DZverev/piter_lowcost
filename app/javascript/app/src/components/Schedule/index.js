@@ -11,7 +11,7 @@ class Schedule extends Component {
     this.state = {
       flightEntries: [{id: 0}],
       lastCity: undefined
-    };
+    }
   }
 
   handleAddNewEntry = () => {
@@ -30,7 +30,11 @@ class Schedule extends Component {
     const flightEntries = this.state.flightEntries.map((e,i) => {
       return(
         <Col key={i} span={6}>
-          <FlightEntry cityFrom={this.state.lastCity} onEntryAdd={this.handleAddNewEntry} updateLastCity={this.handleUpdateLastCity} />
+          <FlightEntry
+            cityFrom={this.state.lastCity}
+            onEntryAdd={this.handleAddNewEntry}
+            updateLastCity={this.handleUpdateLastCity}
+          />
         </Col>
       )
     })
