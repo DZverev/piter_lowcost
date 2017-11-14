@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
-import { Card } from 'antd';
+import React, { Component } from "react";
+import { Card } from "antd";
 
-import Offer from '../Offer';
+import Offer from "../Offer";
 
 // const offers = [
 //   { from: "Таллин", to: "Берлин", date: "20/10/2017", price: "20eu"},
@@ -34,13 +34,13 @@ class OffersList extends Component {
           date={offer.date}
           price={offer.price}
         />
-      )
+      );
     });
     return(
       <Card title="Выберите рейс" extra={<a onClick={this.handleAddButton}>Еще</a>} noHovering>
         {offerItems}
       </Card>
-    )
+    );
   }
 }
 

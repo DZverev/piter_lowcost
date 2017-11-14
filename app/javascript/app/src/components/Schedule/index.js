@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
-import { Row, Col } from 'antd';
-import FlightEntry from '../FlightEntry';
-import DateRange from  '../DateRange'
+import React, { Component } from "react";
+import { Row, Col } from "antd";
+import FlightEntry from "../FlightEntry";
+import DateRange from  "../DateRange";
 
 class Schedule extends Component {
   constructor(props) {
@@ -11,7 +11,7 @@ class Schedule extends Component {
       startDate: null,
       endDate: null,
       lastCity: undefined
-    }
+    };
   }
 
   handleAddNewEntry = () => {
@@ -23,14 +23,14 @@ class Schedule extends Component {
   handleUpdateLastCity = (value) => {
     this.setState({
       lastCity: value
-    })
+    });
   };
 
   handleDateRangeSelect = (startDate, endDate) => {
     this.setState({
       startDate,
       endDate
-    })
+    });
   };
 
   render() {
@@ -43,7 +43,7 @@ class Schedule extends Component {
             updateLastCity={this.handleUpdateLastCity}
           />
         </Col>
-      )
+      );
     });
     return(
       <div>
@@ -52,7 +52,7 @@ class Schedule extends Component {
           {flightEntries}
         </Row>
       </div>
-    )
+    );
   }
 }
 

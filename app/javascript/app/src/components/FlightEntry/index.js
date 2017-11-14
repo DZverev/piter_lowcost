@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
-import { Row, Col } from 'antd';
-import SelectCity from '../SelectCity';
-import OffersList from '../OffersList';
+import React, { Component } from "react";
+import { Row, Col } from "antd";
+import SelectCity from "../SelectCity";
+import OffersList from "../OffersList";
 
-import { API_PATH } from '../../config/development';
+import { API_PATH } from "../../config/development";
 
 class FlightEntry extends Component {
   constructor(props) {
@@ -60,7 +60,7 @@ class FlightEntry extends Component {
           </Col>
         </Row>
       </div>
-    )
+    );
   }
 }
 
