@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import { Select } from 'antd';
+import React, { Component } from "react";
+import { Select } from "antd";
 
 const Option = Select.Option;
 
@@ -18,8 +18,8 @@ class SelectCity extends Component {
     const cityOptions = cities.map((city,i) => {
       return(
         <Option key={i} value={city}>{city}</Option>
-      )
-    })
+      );
+    });
     return(
       <Select
         defaultValue={this.props.cityFrom}
@@ -32,7 +32,7 @@ class SelectCity extends Component {
       >
         {cityOptions}
       </Select>
-    )
+    );
   }
 }
 
