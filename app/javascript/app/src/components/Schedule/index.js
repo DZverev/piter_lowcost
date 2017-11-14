@@ -8,7 +8,8 @@ class Schedule extends Component {
     super(props);
     this.state = {
       flightEntries: [{id: 0}],
-
+      startDate: null,
+      endDate: null,
       lastCity: undefined
     }
   }
@@ -22,6 +23,13 @@ class Schedule extends Component {
   handleUpdateLastCity = (value) => {
     this.setState({
       lastCity: value
+    })
+  };
+
+  handleDateRangeSelect = (startDate, endDate) => {
+    this.setState({
+      startDate,
+      endDate
     })
   };
 
@@ -39,7 +47,7 @@ class Schedule extends Component {
     });
     return(
       <div>
-        <DateRange/>
+        <DateRange updateSchedule={this.handleDateRangeSelect}/>
         <Row>
           {flightEntries}
         </Row>

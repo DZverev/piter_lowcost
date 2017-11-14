@@ -27,6 +27,8 @@ class DateRange extends Component {
     onChange = (field, value) => {
         this.setState({
             [field]: value,
+        }, () => {
+            this.props.updateSchedule(this.state.startValue, this.state.endValue)
         });
     };
 
@@ -54,19 +56,17 @@ class DateRange extends Component {
             <div>
                 <DatePicker
                     disabledDate={this.disabledStartDate}
-                    showTime
-                    format="YYYY-MM-DD HH:mm"
+                    format="YYYY-MM-DD"
                     value={startValue}
-                    placeholder="Start"
+                    placeholder="От"
                     onChange={this.onStartChange}
                     onOpenChange={this.handleStartOpenChange}
                 />
                 <DatePicker
                     disabledDate={this.disabledEndDate}
-                    showTime
-                    format="YYYY-MM-DD HH:mm"
+                    format="YYYY-MM-DD"
                     value={endValue}
-                    placeholder="End"
+                    placeholder="До"
                     onChange={this.onEndChange}
                     open={endOpen}
                     onOpenChange={this.handleEndOpenChange}
